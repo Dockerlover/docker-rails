@@ -13,6 +13,10 @@ RUN gem install sqlite3 -v '1.3.10' && gem install rails -v '4.2.3'
 RUN rails new /app
 # 指定工作路径为/app
 WORKDIR /app
+# 挂载代码路径
+VOLUME ['/app']
+# 默认暴露80端口
+EXPOSE 80
 # 复制supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 启动supervisord
