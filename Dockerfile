@@ -6,7 +6,7 @@ MAINTAINER  liuhong1.happy@163.com
 ENV USER_NAME admin
 ENV SERVICE_ID rails
 # 安装sqlite3
-RUN apt-get update && apt-get install -y  libxml2 mysql-client postgresql-client sqlite3 --no-install-recommends  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y zlib1g-dev  libxml2 mysql-client postgresql-client sqlite3 --no-install-recommends  && rm -rf /var/lib/apt/lists/*
 # 安装rails
 RUN gem install rails -v '4.2.3'
 # 生成默认app
